@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_service_requests
+    columns:
+      - name: unique_key
+        tests:
+          - unique
+          - not_null
+
+      - name: agency
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_match_regex:
+              regex: "^[A-Za-z ]+$"
+
+      - name: complaint_type
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_not_be_null
+
+      - name: created_date
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_not_be_null

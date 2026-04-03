@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: mart_complaints
+    description: "Tabla final con el total de reclamos por tipo de queja"
+
+    columns:
+      - name: complaint_type
+        description: "Tipo de reclamo"
+
+      - name: total_complaints
+        description: "Cantidad total de reclamos por tipo"
